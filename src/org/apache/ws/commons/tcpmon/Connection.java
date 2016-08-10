@@ -135,6 +135,7 @@ class Connection extends Thread {
      * @param l
      */
     public Connection(Listener l) {
+   
         listener = l;
         HTTPProxyHost = l.HTTPProxyHost;
         HTTPProxyPort = l.HTTPProxyPort;
@@ -498,6 +499,7 @@ class Connection extends Thread {
             listener.tableModel.removeRow(index + 1);
             listener.connections.remove(index);
         } catch (Exception e) {
+        	System.out.println("ERROR: Error removing index +1 : "+(index +1));
             e.printStackTrace();
         }
     }
